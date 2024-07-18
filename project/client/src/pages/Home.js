@@ -33,6 +33,7 @@ const Home = () => {
       dispatch(showLoading());
       const response = await getAllMovies();
       if (response.success) {
+        
         setMovies(response.data);
       } else {
         message.error(response.message);
