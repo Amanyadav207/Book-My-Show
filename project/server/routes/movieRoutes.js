@@ -30,6 +30,7 @@ router.get('/get-all-movies' , async(req , res)=>{
             message: 'All movies have been fetched!',
             data: allMovies
         });
+        console.log(allMovies);
         
     } catch (error) {
         res.send({

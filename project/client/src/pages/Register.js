@@ -107,7 +107,7 @@ function Register() {
             </Form>
             <div>
               <p>
-                Already a user? <Link to="/login">Login now</Link>
+                Already a user? <Link to=".\Login.js">Login now</Link>
               </p>
             </div>
           </section>
