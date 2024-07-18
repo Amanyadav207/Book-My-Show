@@ -87,14 +87,14 @@ const BookShow = () => {
                   <li>
                     <button
                       onClick={() => {
-                        if (selectedSeats.includes(seatNumber)) {
-                          setSelectedSeats(
-                            selectedSeats.filter(
-                              (curSeatNumber) => curSeatNumber !== seatNumber
-                            )
-                          );
+                        if (!show.bookedSeats.includes(seatNumber)) {
+                          if (selectedSeats.includes(seatNumber)) {
+                            setSelectedSeats(selectedSeats.filter((curSeatNumber) => curSeatNumber !== seatNumber));
+                          } else {
+                            setSelectedSeats([...selectedSeats, seatNumber]);
+                          }
                         } else {
-                          setSelectedSeats([...selectedSeats, seatNumber]);
+                          message.error("This seat is already booked!");
                         }
                       }}
                       className={seatClass}
